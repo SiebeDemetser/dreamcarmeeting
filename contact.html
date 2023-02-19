@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pajotse Dreamcar Meeting Sponsors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">Dreamcar Meeting</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./sponsors.html">Onze sponsors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1 class="text-center mt-5">Contacteer ons</h1>
+        <!-- Wrapper container -->
+        <div class="container py-4">
+
+            <!-- Bootstrap 5 starter form -->
+            <form id="contactForm" method="post" action="sendform.php">
+
+                <!-- Name input -->
+                <div class="mb-3">
+                    <label class="form-label" for="name">Naam</label>
+                    <input class="form-control" id="name" type="text" placeholder="Naam"
+                        data-sb-validations="required" />
+                    <div class="invalid-feedback" data-sb-feedback="name:required">Naam is verplicht.</div>
+                </div>
+
+                <!-- Email address input -->
+                <div class="mb-3">
+                    <label class="form-label" for="emailAddress">Email adres</label>
+                    <input class="form-control" id="emailAddress" type="email" placeholder="Email adres"
+                        data-sb-validations="required, email" />
+                    <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Adres is verplicht.
+                    </div>
+                    <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email adres is niet geldig.</div>
+                </div>
+
+                <!-- Message input -->
+                <div class="mb-3">
+                    <label class="form-label" for="message">Uw bericht</label>
+                    <textarea class="form-control" id="message" type="text" placeholder="Uw bericht" style="height: 10rem;"
+                        data-sb-validations="required"></textarea>
+                    <div class="invalid-feedback" data-sb-feedback="message:required">Verplicht in te vullen.</div>
+                </div>
+
+                <!-- Form submissions success message -->
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center mb-3">Uw bericht is verzonden!</div>
+                </div>
+
+                <!-- Form submissions error message -->
+                <div class="d-none" id="submitErrorMessage">
+                    <div class="text-center text-danger mb-3">Error sending message!</div>
+                </div>
+
+                <!-- Form submit button -->
+                <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Verzend</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- SB Forms JS -->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </main>
+</body>
