@@ -1,26 +1,24 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = test_input($_POST["name"]);
+    $email = test_input($_POST["email"]);
+    $message = test_input($_POST["message"]);
+    $to_email = "siebe@depov.be";
+    $subject = "New Contact Form Submission";
+    $body = "Name: $name\nEmail: $email\nMessage:\n$message";
+    $headers = "From: $email\nReply-To: $email";
 
-    // Email parameters
-    $to = 'info@depov.be';
-    $subject = 'Contact Form Submission';
-    $headers = "From: $name <$email>" . "\r\n";
-    $headers .= "Reply-To: $email" . "\r\n";
-
-    // Email message
-    $email_message = "Name: $name\n\nEmail: $email\n\nMessage:\n$message";
-
-    // Send email
-    if (mail($to, $subject, $email_message, $headers)) {
-        // Success message
-        echo "<div class='text-center mb-3'>Uw bericht is verzonden!</div>";
+    if (mail($to_email, $subject, $body, $headers)) {
+        echo "success";
     } else {
-        // Error message
-        echo "<div class='text-center text-danger mb-3'>Error sending message!</div>";
+        echo "error";
     }
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 ?>
