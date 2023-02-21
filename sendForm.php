@@ -1,12 +1,12 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "post") {
     $name = test_input($_POST["name"]);
     $email = test_input($_POST["email"]);
     $message = test_input($_POST["message"]);
     $to_email = "siebe@depov.be";
     $subject = "New Contact Form Submission";
     $body = "Name: $name\nEmail: $email\nMessage:\n$message";
-    $headers = "From: siebe@depov.be";
+    $headers = "From: website@depov.be";
 
     if (mail($to_email, $subject, $body, $headers)) {
         echo "success";
