@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to_email = "siebe@depov.be";
     $subject = "New Contact Form Submission";
     $body = "Name: $name\nEmail: $email\nMessage:\n$message";
-    $headers = "From: $email\nReply-To: $email";
+    $headers = "From: siebe@depov.be";
 
     if (mail($to_email, $subject, $body, $headers)) {
         echo "success";
