@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = test_input($_POST["name"]);
-    $email = test_input($_POST["email"]);
-    $message = test_input($_POST["message"]);
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $message = $_POST["message"];
     $to_email = "siebe@depov.be";
     $subject = "New Contact Form Submission";
     $body = "Name: $name\nEmail: $email\nMessage:\n$message";
